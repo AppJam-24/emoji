@@ -50,4 +50,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
+    implementation("com.otaliastudios:cameraview:2.7.2")
+
 }
