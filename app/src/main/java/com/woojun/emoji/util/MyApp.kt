@@ -1,4 +1,4 @@
-package com.woojun.emoji
+package com.woojun.emoji.util
 
 import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate

@@ -1,7 +1,8 @@
-package com.woojun.emoji
+package com.woojun.emoji.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.woojun.emoji.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
