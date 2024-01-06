@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="홈"
+        android:icon="@drawable/home_icon"
+        android:id="@+id/home"
+        app:cnb_iconColor="@color/primary"
+        app:showAsAction="withText" />
+
+    <item android:title="채팅"
+        android:icon="@drawable/chat_icon"
+        android:id="@+id/chat"
+        app:cnb_iconColor="@color/primary"
+        app:showAsAction="withText" />
+
+    <item android:title="설정"
+        android:icon="@drawable/settings_icon"
+        android:id="@+id/setting"
+        app:cnb_iconColor="@color/primary"
+        app:showAsAction="withText" />
+
+
+</menu>
