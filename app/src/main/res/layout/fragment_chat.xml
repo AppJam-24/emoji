@@ -72,7 +72,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="11dp"
         android:layout_marginEnd="87dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="14dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="18dp"
         app:cardElevation="0dp"
@@ -82,6 +82,9 @@
         app:strokeColor="@color/primary">
 
         <EditText
+            android:maxLines="1"
+            android:maxLength="5"
+            android:textColorHint="#9D9D9D"
             android:layout_width="240dp"
             android:layout_height="match_parent"
             android:layout_marginStart="14dp"
@@ -89,7 +92,7 @@
             android:background="@null"
             android:gravity="start|center"
             android:hint="현재 감정을 입력하세요."
-            android:textColor="#9D9D9D"
+            android:textColor="@color/black"
             android:textSize="13dp" />
 
     </com.google.android.material.card.MaterialCardView>
