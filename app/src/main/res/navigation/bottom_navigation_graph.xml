@@ -20,5 +20,24 @@
         android:name="com.woojun.emoji.fragment.SettingFragment"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.woojun.emoji.fragment.CameraFragment"
+        android:label="fragment_camera"
+        tools:layout="@layout/fragment_camera" >
+        <action
+            android:id="@+id/action_cameraFragment_to_chat"
+            app:destination="@id/chat" />
+    </fragment>
+    <fragment
+        android:id="@+id/diaryFragment"
+        android:name="com.woojun.emoji.fragment.DiaryFragment"
+        android:label="fragment_diary"
+        tools:layout="@layout/fragment_diary" />
+    <fragment
+        android:id="@+id/innerFragment"
+        android:name="com.woojun.emoji.fragment.InnerFragment"
+        android:label="fragment_inner"
+        tools:layout="@layout/fragment_inner" />
 
 </navigation>
