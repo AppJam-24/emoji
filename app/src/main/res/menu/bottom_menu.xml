@@ -13,11 +13,11 @@
         app:cnb_iconColor="@color/primary"
         app:showAsAction="withText" />
 
-    <item android:title="설정"
-        android:icon="@drawable/settings_icon"
-        android:id="@+id/setting"
-        app:cnb_iconColor="@color/primary"
-        app:showAsAction="withText" />
+<!--    <item android:title="설정"-->
+<!--        android:icon="@drawable/settings_icon"-->
+<!--        android:id="@+id/setting"-->
+<!--        app:cnb_iconColor="@color/primary"-->
+<!--        app:showAsAction="withText" />-->
 
 
 </menu>
