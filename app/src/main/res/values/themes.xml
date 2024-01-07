@@ -3,7 +3,13 @@
     <style name="Base.Theme.Emoji" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textViewStyle">@font/t_f</item>
+
     </style>
 
     <style name="Theme.Emoji" parent="Base.Theme.Emoji" />
+    <style name="AppFont">
+        <item name="android:fontFamily">@font/t_f</item>
+    </style>
+
 </resources>
