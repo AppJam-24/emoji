@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id ("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -15,6 +17,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASEURL", com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(
+            rootDir
+        ).getProperty("baseUrl"))
     }
 
     buildTypes {
@@ -24,6 +30,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        buildFeatures {
+            buildConfig = true
         }
     }
     compileOptions {
@@ -52,4 +61,15 @@ dependencies {
     implementation("com.github.ismaeldivita:chip-navigation-bar:1.4.0")
     implementation("com.otaliastudios:cameraview:2.7.2")
 
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation ("com.github.bumptech.glide:compiler:4.12.0")
+
+    val roomVersion = "2.5.2"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
 }
