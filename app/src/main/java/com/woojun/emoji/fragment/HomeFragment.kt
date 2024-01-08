@@ -9,8 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import com.woojun.emoji.R
 import com.woojun.emoji.databinding.FragmentHomeBinding
+import com.woojun.emoji.util.AppDatabase
+import com.woojun.emoji.util.DiaryAdapter
+import com.woojun.emoji.util.MyApp
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeFragment : Fragment() {
 
@@ -32,6 +40,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+
             val text = helloText.text
             val spannableString = SpannableString(text)
             val color = ContextCompat.getColor(requireContext(), R.color.primary)
@@ -47,6 +56,29 @@ class HomeFragment : Fragment() {
             }
 
             helloText.text = spannableString
+
+            CoroutineScope(Dispatchers.IO).launch {
+                val db = AppDatabase.getDatabase(requireContext())
+                val isFirst = MyApp.prefs.getString("isFirst", "o")
+
+                if (isFirst == "x") {
+                    var list = db?.userDao()!!.getUser().list
+
+                    if (list.isNotEmpty()) {
+                        withContext(Dispatchers.Main) {
+                            val diaryAdapter = DiaryAdapter(list, requireContext())
+                            diaryList.layoutManager = GridLayoutManager(requireContext(),2)
+                            diaryList.adapter = diaryAdapter
+                        }
+                    } else {
+                        diaryList.visibility = View.GONE
+                        firstView.visibility = View.VISIBLE
+                    }
+                } else {
+                    diaryList.visibility = View.GONE
+                    firstView.visibility = View.VISIBLE
+                }
+            }
 
         }
     }
